@@ -1,0 +1,10 @@
+// Environment Variables
+process.env.NODE_ENV = "development";
+process.env.PORT = "5000";
+process.env.MONGO_URI = "mongodb+srv://chamodya:chamodya@photography.qbx2wxj.mongodb.net/?retryWrites=true&w=majority&appName=photography";
+process.env.JWT_SECRET = "your_jwt_secret_key";
+process.env.JWT_EXPIRE = "30d";
+process.env.EMAIL_SERVICE = "gmail";
+process.env.EMAIL_USERNAME = "your_email@gmail.com";
+process.env.EMAIL_PASSWORD = "your_email_password";
+process.env.EMAIL_FROM = "noreply@lankaphotography.com";

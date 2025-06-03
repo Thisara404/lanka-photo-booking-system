@@ -1,0 +1,121 @@
+:root {
+  --color-neutral-900: #001a2d;
+  --color-neutral-800: #002a3d;
+  --color-light: #efeeec;
+  --color-primary: #26fdd9;
+  --container-padding: 2rem;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 3/4;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+  background: var(--color-neutral-800);
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+
+.image-container:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.28);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1.2rem;
+  transition: filter 0.3s ease;
+}
+
+.pixelated-image-card {
+  background-color: var(--color-neutral-800);
+  color: var(--color-primary);
+  border-radius: 0.5em;
+  width: 30vw;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.before__100 {
+  padding-top: 100%;
+}
+
+.pixelated-image-card__default, 
+.pixelated-image-card__img,
+.pixelated-image-card__active, 
+.pixelated-image-card__pixels {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pixelated-image-card__active {
+  display: none;
+}
+
+.pixelated-image-card__pixels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pixelated-image-card__pixel {
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+.pixelated-image-card__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: var(--color-light);
+  font-family: 'PP Neue Montreal', Arial, sans-serif;
+  z-index: 1;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.image-container:nth-child(odd) {
+  grid-column: 1;
+}
+
+.image-container:nth-child(even) {
+  grid-column: 2;
+} 

@@ -1,0 +1,81 @@
+* {
+ box-sizing: border-box;
+}
+
+body {
+ overscroll-behavior: none;
+ margin: 0;
+ padding: 0;
+ overflow-x: hidden;
+ background-color: #111111;
+}
+
+.hero {
+ height: 100vh;
+ &__inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+ }
+
+ &__image-cont {
+  position: relative;
+  overflow: hidden;
+  &:not(:last-child):after {
+   content: "";
+   position: absolute;
+   right: 0px;
+   background-color: #111111;
+   height: 100%;
+   top: 0;
+   width: 2.5px;
+   z-index: 999;
+  }
+
+  img,
+  .anim-swipe {
+   position: absolute;
+   width: 700%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+  }
+ }
+
+ .anim-swipe {
+  width: 100%;
+  background-color: #111111;
+ }
+
+ &__image-cont:nth-child(1) img {
+  left: -100%;
+ }
+ &__image-cont:nth-child(2) img {
+  left: -200%;
+ }
+ &__image-cont:nth-child(3) img {
+  left: -300%;
+ }
+ &__image-cont:nth-child(4) img {
+  left: -400%;
+ }
+ &__image-cont:nth-child(5) img {
+  left: -500%;
+ }
+ &__image-cont:nth-child(6) img {
+  left: -600%;
+ }
+}
+
+.spacer {
+ height: 300vh;
+}
+
+.scroll {
+ position: fixed;
+ bottom: 1rem;
+ left: 50%;
+ transform: translateX(-50%);
+ z-index: 999;
+}
